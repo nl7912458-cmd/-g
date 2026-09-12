@@ -24,7 +24,14 @@ export const listTaiLieu = [
         title: 'TÀI LIỆU CHUYÊN ĐỀ: BÁCH KHOA TOÀN THƯ THỂ LOẠI VĂN HỌC',
         description: 'Chi tiết đặc trưng các thể loại Dân gian, Trung đại và Hiện đại giúp xử lý mượt mà mọi câu Đọc hiểu.',
         date: '20/09/2026'
+        },
+        {
+        id: 'tailieu5',
+        title: 'TÀI LIỆU CHUYÊN ĐỀ: MÁY QUÉT 6 PHƯƠNG THỨC BIỂU ĐẠT',
+        description: 'Mẹo nhận diện cực nhanh phương thức cốt lõi và kỹ thuật "Thử phản đối" né bẫy.',
+        date: '22/09/2026'
         }
+    
 ];
 
 export const listDeThi = [
