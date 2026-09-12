@@ -1,14 +1,13 @@
 // data/tailieu1.js
 export const content = `
-<div style="font-family: 'Inter', system-ui, sans-serif; color: #1d1d1f; max-width: 800px; margin: 0 auto; background: #ffffff; padding: 20px; position: relative; min-height: 800px;">
+<div style="font-family: 'Inter', system-ui, sans-serif; color: #1d1d1f; max-width: 800px; margin: 0 auto; background: #ffffff; padding: 20px; position: relative; min-height: 800px; z-index: 0;">
     
-    <!-- WATERMARK (Đã fix lỗi căn giữa tuyệt đối toàn trang) -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 1; pointer-events: none; overflow: hidden;">
-        <!-- BẠN HÃY THAY ĐƯỜNG LINK BÊN DƯỚI BẰNG LINK TUYỆT ĐỐI CỦA ẢNH -->
-        <img src="https://nl7912458-cmd.github.io/Ghd/Anh/1.png" alt="Watermark" style="width: 350px; opacity: 0.15; filter: grayscale(100%); object-fit: contain;">
+    <!-- WATERMARK (Đã fix mượt cho html2pdf: Bỏ transform, dùng text-align) -->
+    <div style="position: absolute; top: 350px; left: 0; right: 0; width: 100%; text-align: center; z-index: -1; pointer-events: none; opacity: 0.15; filter: grayscale(100%);">
+        <img src="https://nl7912458-cmd.github.io/Ghd/Anh/1.png" alt="Watermark" style="width: 350px; display: inline-block; margin: 0 auto;">
     </div>
 
-    <!-- NỘI DUNG CHÍNH (z-index: 2 để nổi lên trên watermark) -->
+    <!-- NỘI DUNG CHÍNH -->
     <div style="position: relative; z-index: 2;">
         
         <!-- KHUNG HEADER -->
