@@ -1,10 +1,7 @@
 // js/auth.js
-import { app, auth } from './firebase-config.js'; // Nhớ export cả 'app' từ file config nhé
+import { auth, db } from './firebase-config.js'; // Lấy thẳng auth và db từ file config của bạn
 import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
-
-// Khởi tạo Firestore
-const db = getFirestore(app);
+import { doc, getDoc, setDoc, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
 
 const loginForm = document.getElementById('loginForm');
 const emailInput = document.getElementById('email');
@@ -34,16 +31,16 @@ function getDeviceId() {
     return deviceId;
 }
 
-let isLoggingIn = false; // Biến cờ để ngăn onAuthStateChanged chuyển trang quá sớm
+let isLoggingIn = false; // Cờ kiểm soát vòng lặp chuyển trang
 
 // ------------------------------------------------------------------
-// 1. XỬ LÝ KHI BẤM ĐĂNG NHẬP (Chỉ có ở login.html)
+// 1. XỬ LÝ KHI BẤM ĐĂNG NHẬP (Chỉ chạy ở trang login.html)
 // ------------------------------------------------------------------
 if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        isLoggingIn = true; // Bật cờ: Bắt đầu quá trình đăng nhập và kiểm tra
+        isLoggingIn = true; 
         loginBtn.disabled = true;
         loginSpinner.classList.remove('hidden');
         errorMessage.classList.add('hidden');
@@ -51,11 +48,11 @@ if (loginForm) {
         const currentDeviceId = getDeviceId();
 
         try {
-            // A. Xác thực bằng Firebase Auth
+            // A. Xác thực email/mật khẩu
             const userCredential = await signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value);
             const user = userCredential.user;
 
-            // B. Kiểm tra: Thiết bị này đã bị gắn với tài khoản khác chưa?
+            // B. Kiểm tra: Máy này có đang bị gắn với tài khoản khác không?
             const usersRef = collection(db, "users");
             const q = query(usersRef, where("deviceId", "==", currentDeviceId));
             const querySnapshot = await getDocs(q);
@@ -72,7 +69,7 @@ if (loginForm) {
                 throw new Error("device_used");
             }
 
-            // C. Kiểm tra: Tài khoản này đã đăng nhập ở thiết bị khác chưa?
+            // C. Kiểm tra: Tài khoản này đã từng đăng nhập ở máy khác chưa?
             const userDocRef = doc(db, "users", user.uid);
             const userDocSnap = await getDoc(userDocRef);
 
@@ -83,7 +80,7 @@ if (loginForm) {
                     throw new Error("account_locked");
                 }
             } else {
-                // D. Lần đầu đăng nhập: Khóa tài khoản này vào thiết bị hiện tại
+                // D. Lần đầu đăng nhập: Lưu ID máy này lên Firestore
                 await setDoc(userDocRef, {
                     email: user.email,
                     deviceId: currentDeviceId,
@@ -91,11 +88,11 @@ if (loginForm) {
                 });
             }
 
-            // Mọi thứ hợp lệ -> Chuyển hướng
+            // Hợp lệ toàn bộ -> Về trang chủ
             goTo('index.html');
 
         } catch (error) {
-            // Xử lý các thông báo lỗi tương ứng
+            // Hiển thị lỗi
             if (error.message === "device_used") {
                 errorMessage.textContent = "❌ Thiết bị này đã đăng nhập tài khoản khác. 1 máy chỉ dùng 1 tài khoản!";
             } else if (error.message === "account_locked") {
@@ -107,13 +104,13 @@ if (loginForm) {
             errorMessage.classList.remove('hidden');
             loginBtn.disabled = false;
             loginSpinner.classList.add('hidden');
-            isLoggingIn = false; // Tắt cờ nếu lỗi
+            isLoggingIn = false; 
         }
     });
 }
 
 // ------------------------------------------------------------------
-// 2. KIỂM TRA TRẠNG THÁI ĐĂNG NHẬP (Áp dụng toàn trang)
+// 2. KIỂM TRA TRẠNG THÁI ĐĂNG NHẬP & BẢO VỆ TRANG (Toàn bộ web)
 // ------------------------------------------------------------------
 const currentFileName = window.location.pathname.split('/').pop() || 'index.html';
 const protectedPages = ['kienthuc.html', 'thucchien.html'];
@@ -139,8 +136,6 @@ function setNavToLoggedOut() {
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        // Chỉ tự động chuyển hướng từ trang login NẾU người dùng vừa mở trang (đã đăng nhập từ trước)
-        // Nếu người dùng đang bấm nút đăng nhập (isLoggingIn = true), chờ form submit xử lý
         if (currentFileName === 'login.html' && !isLoggingIn) {
             goTo('index.html');
             return;
