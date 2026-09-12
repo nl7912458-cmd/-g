@@ -18,7 +18,13 @@ export const listTaiLieu = [
         title: 'TÀI LIỆU CHUYÊN ĐỀ: HỆ THỐNG CÁC LOẠI HÌNH VĂN HỌC',
         description: 'Dấu hiệu nhận diện Tự sự, Trữ tình, Kịch, Ký để xử lý nhanh câu hỏi Đọc hiểu.',
         date: '18/09/2026'
-    }
+    }, 
+        {
+        id: 'tailieu4',
+        title: 'TÀI LIỆU CHUYÊN ĐỀ: BÁCH KHOA TOÀN THƯ THỂ LOẠI VĂN HỌC',
+        description: 'Chi tiết đặc trưng các thể loại Dân gian, Trung đại và Hiện đại giúp xử lý mượt mà mọi câu Đọc hiểu.',
+        date: '20/09/2026'
+        }
 ];
 
 export const listDeThi = [
