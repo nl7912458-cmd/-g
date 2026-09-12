@@ -1,19 +1,20 @@
 // data/tailieu1.js
 export const content = `
-<div style="font-family: 'Inter', system-ui, sans-serif; color: #1d1d1f; max-width: 800px; margin: 0 auto; background: #ffffff; padding: 20px; position: relative;">
+<div style="font-family: 'Inter', system-ui, sans-serif; color: #1d1d1f; max-width: 800px; margin: 0 auto; background: #ffffff; padding: 20px; position: relative; min-height: 800px;">
     
-    <!-- KHUNG HEADER -->
-    <div style="background-color: #00a8ff; color: white; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 24px; border-radius: 4px;">
-        <span>TĐĐT_ĐGNL</span>
-        <span>TỌA ĐỘ ĐỊNH TÍNH - LUYỆN THI ĐGNL</span>
+    <!-- WATERMARK (Đã fix lỗi căn giữa tuyệt đối toàn trang) -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 1; pointer-events: none; overflow: hidden;">
+        <!-- BẠN HÃY THAY ĐƯỜNG LINK BÊN DƯỚI BẰNG LINK TUYỆT ĐỐI CỦA ẢNH -->
+        <img src="https://nl7912458-cmd.github.io/Ghd/Anh/1.png" alt="Watermark" style="width: 350px; opacity: 0.15; filter: grayscale(100%); object-fit: contain;">
     </div>
 
-    <!-- NỘI DUNG CHÍNH -->
-    <div style="position: relative; z-index: 2; padding: 0 10px;">
+    <!-- NỘI DUNG CHÍNH (z-index: 2 để nổi lên trên watermark) -->
+    <div style="position: relative; z-index: 2;">
         
-        <!-- WATERMARK DÙNG ẢNH LOGO GỐC TỪ THƯ MỤC "Anh" -->
-        <div style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: -1; text-align: center; pointer-events: none; width: 100%;">
-            <img src="./Anh/1.png" alt="Logo Tọa Độ Định Tính" style="width: 350px; opacity: 0.15; filter: grayscale(100%);">
+        <!-- KHUNG HEADER -->
+        <div style="background-color: #00a8ff; color: white; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 24px; border-radius: 4px;">
+            <span>TĐĐT_ĐGNL</span>
+            <span>TỌA ĐỘ ĐỊNH TÍNH - LUYỆN THI ĐGNL</span>
         </div>
 
         <h1 style="font-size: 22px; font-weight: 800; margin-bottom: 12px; color: #1d1d1f; text-align: center; text-transform: uppercase;">TÀI LIỆU CHUYÊN ĐỀ: HỆ THỐNG TỪ LOẠI & DẤU HIỆU NHẬN BIẾT</h1>
@@ -65,15 +66,13 @@ export const content = `
             </ul>
         </div>
 
+        <!-- CHÂN TRANG (FOOTER) -->
+        <div style="margin-top: 30px; border-top: 1px solid #e5e7eb; padding-top: 14px; text-align: center; font-size: 12px; color: #4b5563;">
+            Theo dõi kênh TikTok chính thức để nhận thêm mẹo định tính: 
+            <a href="https://www.tiktok.com/@toado.dinhtinhhsa?_r=1&_t=ZS-99fiBWJaql5" target="_blank" style="color: #00a8ff; font-weight: bold; text-decoration: none;">
+                @toado.dinhtinhhsa
+            </a>
+        </div>
     </div>
-
-    <!-- CHÂN TRANG (FOOTER) CHỨA LINK TIKTOK -->
-    <div style="margin-top: 30px; border-top: 1px solid #e5e7eb; padding-top: 14px; text-align: center; font-size: 12px; color: #4b5563;">
-        Theo dõi kênh TikTok chính thức để nhận thêm mẹo định tính: 
-        <a href="https://www.tiktok.com/@toado.dinhtinhhsa?_r=1&_t=ZS-99fiBWJaql5" target="_blank" style="color: #00a8ff; font-weight: bold; text-decoration: none;">
-            @toado.dinhtinhhsa
-        </a>
-    </div>
-
 </div>
 `;
