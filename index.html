@@ -26,16 +26,39 @@
         }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="./css/style.css">
+    
+    <style>
+        /* Các hiệu ứng fade-in mượt mà */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+    </style>
 </head>
 <body class="bg-apple-light text-apple-dark antialiased selection:bg-apple-blue selection:text-white">
 
-    <!-- Màn hình loading mờ trong lúc chờ Firebase xác định trạng thái đăng nhập -->
-    <div id="globalLoader" class="global-loader">
+    <!-- Màn hình loading mờ -->
+    <div id="globalLoader" class="global-loader hidden">
         <div class="spinner"></div>
     </div>
 
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
@@ -44,6 +67,7 @@
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="text-sm font-medium hover:text-apple-blue transition">Trang chủ</a>
+                    <a href="#gioi-thieu" class="text-sm font-medium text-gray-500 hover:text-apple-blue transition">Giới thiệu</a>
                     <a href="kienthuc.html" class="text-sm font-medium text-gray-500 hover:text-apple-blue transition">Kiến thức</a>
                     <a href="thucchien.html" class="text-sm font-medium text-gray-500 hover:text-apple-blue transition">Thực chiến</a>
                 </div>
@@ -56,26 +80,91 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <main class="pt-32 pb-16 sm:pt-40 sm:pb-24 lg:pb-32 px-4 mx-auto max-w-6xl text-center">
         <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 fade-in-up">
-            Tư duy sắc bén.<br>
+            Toạ độ vàng.<br>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-apple-blue to-purple-600">
-                Thực chiến đỉnh cao.
+                Vượt ngàn câu hỏi.
             </span>
         </h1>
         <p class="mt-4 max-w-2xl text-lg sm:text-xl text-gray-500 mx-auto font-light fade-in-up delay-100">
-            Hệ thống hóa kiến thức từ dao động cơ, vòng tròn lượng giác đến các bài toán tối ưu hàm số một cách trực quan nhất. Rèn luyện tư duy với áp lực thời gian thực.
+            Hệ thống hóa kiến thức phần Định tính bài thi HSA. Rèn luyện tư duy ngôn ngữ, bứt phá kỹ năng đọc hiểu và phân tích logic văn bản một cách trực quan, chính xác nhất.
         </p>
-        <div class="mt-10 flex justify-center gap-4 fade-in-up delay-200">
+        <div class="mt-10 flex flex-wrap justify-center gap-4 fade-in-up delay-200">
             <a href="kienthuc.html" class="bg-apple-blue text-white font-medium px-8 py-3.5 rounded-full hover:bg-apple-blueHover transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200">
                 Khám phá lý thuyết
             </a>
             <a href="thucchien.html" class="bg-white text-apple-dark font-medium px-8 py-3.5 rounded-full hover:bg-gray-50 transition shadow-sm border border-gray-200 hover:shadow-md hover:-translate-y-0.5 transform duration-200">
                 Thi thử 60 phút
             </a>
+            <a href="https://www.tiktok.com/@toado.dinhtinhhsa?_r=1&_t=ZS-99fZmTYtLd4" target="_blank" class="flex items-center gap-2 bg-black text-white font-medium px-8 py-3.5 rounded-full hover:bg-gray-800 transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200">
+                <!-- TikTok Icon -->
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 15.68a6.34 6.34 0 006.33 6.33 6.33 6.33 0 006.33-6.33v-8.32a8.16 8.16 0 004 1.11V4.93a4.78 4.78 0 01-2.07-.24z"></path>
+                </svg>
+                TikTok
+            </a>
         </div>
     </main>
 
+    <!-- Giới thiệu & Mục tiêu (MỚI THÊM) -->
+    <section id="gioi-thieu" class="max-w-6xl mx-auto px-4 pb-24">
+        <div class="bg-white rounded-3xl p-8 md:p-12 border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-lg">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Về Tọa Độ Định Tính</h2>
+                <p class="text-gray-500 font-light max-w-2xl mx-auto text-lg">
+                    Nền tảng tiên phong chuyên sâu về phần thi Định tính (Ngữ văn & Ngôn ngữ) trong kỳ thi Đánh giá năng lực (HSA). Chúng tôi cung cấp giải pháp học tập tối ưu, hiện đại và bám sát đề thi thực tế.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 flex items-center gap-2">
+                        <span class="text-apple-blue">🎯</span> Mục tiêu cốt lõi
+                    </h3>
+                    <ul class="space-y-5 text-gray-600 font-light">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 bg-blue-100 text-apple-blue p-1 rounded-full">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span><strong>Xóa bỏ tư duy "học vẹt":</strong> Xây dựng nền tảng logic ngôn ngữ, giúp học sinh hiểu sâu bản chất, nắm bắt ý chính của mọi văn bản thay vì ghi nhớ máy móc.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 bg-blue-100 text-apple-blue p-1 rounded-full">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span><strong>Tối ưu hóa điểm số HSA:</strong> Cung cấp bộ phương pháp giải nhanh, mẹo xử lý chính xác các dạng bài đọc hiểu, tìm lỗi sai, điền từ và tác phẩm văn học.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 bg-blue-100 text-apple-blue p-1 rounded-full">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span><strong>Rèn luyện kỹ năng thực chiến:</strong> Quen với áp lực phòng thi thông qua hệ thống thi thử mô phỏng 100% giao diện thi thật.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Box liên kết TikTok -->
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 flex flex-col justify-center items-center text-center">
+                    <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 15.68a6.34 6.34 0 006.33 6.33 6.33 6.33 0 006.33-6.33v-8.32a8.16 8.16 0 004 1.11V4.93a4.78 4.78 0 01-2.07-.24z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Học kiến thức qua Video ngắn</h3>
+                    <p class="text-gray-500 font-light mb-6 text-sm">
+                        Đừng quên theo dõi kênh TikTok của chúng mình để bỏ túi các mẹo giải đề, phân tích cấu trúc bài thi cực nhanh và dễ hiểu mỗi ngày!
+                    </p>
+                    <a href="https://www.tiktok.com/@toado.dinhtinhhsa?_r=1&_t=ZS-99fZmTYtLd4" target="_blank" class="w-full bg-black text-white font-medium px-6 py-3.5 rounded-xl hover:bg-gray-800 transition shadow-md hover:-translate-y-0.5 transform duration-200">
+                        Follow kênh TikTok
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
     <section class="max-w-6xl mx-auto px-4 pb-24">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="apple-card p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
@@ -84,7 +173,7 @@
                 </div>
                 <h3 class="text-2xl font-semibold mb-3">Tài liệu trực quan</h3>
                 <p class="text-gray-500 font-light leading-relaxed">
-                    Hệ thống hóa từ các khái niệm cơ bản đến chuyên sâu như kỹ thuật chiếu vectơ hay tổ hợp sắp xếp. Tải xuống PDF chất lượng cao bất cứ lúc nào.
+                    Hệ thống hóa từ các khái niệm cơ bản đến chuyên sâu như kỹ thuật tìm lỗi sai, điền từ, và sơ đồ tư duy phân tích tác phẩm. Tải xuống PDF chất lượng cao bất cứ lúc nào.
                 </p>
             </div>
 
@@ -94,11 +183,16 @@
                 </div>
                 <h3 class="text-2xl font-semibold mb-3">Thực chiến 60 phút</h3>
                 <p class="text-gray-500 font-light leading-relaxed">
-                    Đồng hồ đếm ngược thông minh, tự động cảnh báo khi sắp hết giờ. Trải nghiệm làm bài liền mạch, lưu điểm số trực tiếp trên hệ thống.
+                    Đồng hồ đếm ngược thông minh, tự động cảnh báo khi sắp hết giờ. Trải nghiệm làm phần thi Định tính liền mạch, phân tích lỗi sai và lưu điểm số trực tiếp.
                 </p>
             </div>
         </div>
     </section>
+
+    <!-- Optional Simple Footer -->
+    <footer class="border-t border-gray-200 bg-white py-8 text-center text-gray-500 text-sm">
+        <p>© 2026 Tọa Độ Định Tính. All rights reserved.</p>
+    </footer>
 
     <script type="module" src="./js/auth.js"></script>
 </body>
