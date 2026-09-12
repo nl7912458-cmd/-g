@@ -30,8 +30,13 @@ export const listTaiLieu = [
         title: 'TÀI LIỆU CHUYÊN ĐỀ: MÁY QUÉT 6 PHƯƠNG THỨC BIỂU ĐẠT',
         description: 'Mẹo nhận diện cực nhanh phương thức cốt lõi và kỹ thuật "Thử phản đối" né bẫy.',
         date: '22/09/2026'
+        },
+        {
+        id: 'tailieu6',
+        title: 'TÀI LIỆU CHUYÊN ĐỀ: 6 THAO TÁC LẬP LUẬN CỐT LÕI',
+        description: 'Bí quyết phân biệt Giải thích, Phân tích, Chứng minh và cách né bẫy nhầm lẫn thao tác chính.',
+        date: '25/09/2026'
         }
-    
 ];
 
 export const listDeThi = [
