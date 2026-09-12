@@ -1,6 +1,10 @@
 // js/auth.js
-import { auth } from './firebase-config.js';
+import { app, auth } from './firebase-config.js'; // Nhớ export cả 'app' từ file config nhé
 import { signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+
+// Khởi tạo Firestore
+const db = getFirestore(app);
 
 const loginForm = document.getElementById('loginForm');
 const emailInput = document.getElementById('email');
@@ -10,10 +14,6 @@ const loginBtn = document.getElementById('loginBtn');
 const loginSpinner = document.getElementById('loginSpinner');
 const globalLoader = document.getElementById('globalLoader');
 
-// BUG ĐÃ SỬA: file gốc hard-code "/Ghd/" trước mọi đường dẫn chuyển hướng.
-// Điều này chỉ đúng khi repo GitHub Pages tên đúng là "Ghd" và luôn lệch
-// khi chạy local hoặc đổi tên repo. Dùng đường dẫn tương đối (không có "/"
-// ở đầu) để nó tự đúng dù host ở domain gốc hay ở bất kỳ sub-path nào.
 function goTo(page) {
     window.location.href = page;
 }
@@ -22,28 +22,99 @@ function hideLoader() {
     if (globalLoader) globalLoader.classList.add('hidden');
 }
 
-// 1. Xử lý logic khi bấm nút Đăng nhập (chỉ tồn tại trên login.html)
+// ------------------------------------------------------------------
+// HÀM TẠO HOẶC LẤY DEVICE ID
+// ------------------------------------------------------------------
+function getDeviceId() {
+    let deviceId = localStorage.getItem('device_id');
+    if (!deviceId) {
+        deviceId = 'device_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+        localStorage.setItem('device_id', deviceId);
+    }
+    return deviceId;
+}
+
+let isLoggingIn = false; // Biến cờ để ngăn onAuthStateChanged chuyển trang quá sớm
+
+// ------------------------------------------------------------------
+// 1. XỬ LÝ KHI BẤM ĐĂNG NHẬP (Chỉ có ở login.html)
+// ------------------------------------------------------------------
 if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        isLoggingIn = true; // Bật cờ: Bắt đầu quá trình đăng nhập và kiểm tra
         loginBtn.disabled = true;
         loginSpinner.classList.remove('hidden');
         errorMessage.classList.add('hidden');
 
+        const currentDeviceId = getDeviceId();
+
         try {
-            await signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value);
-            // onAuthStateChanged bên dưới sẽ tự động điều hướng về trang chủ
+            // A. Xác thực bằng Firebase Auth
+            const userCredential = await signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value);
+            const user = userCredential.user;
+
+            // B. Kiểm tra: Thiết bị này đã bị gắn với tài khoản khác chưa?
+            const usersRef = collection(db, "users");
+            const q = query(usersRef, where("deviceId", "==", currentDeviceId));
+            const querySnapshot = await getDocs(q);
+
+            let isDeviceUsedByOther = false;
+            querySnapshot.forEach((document) => {
+                if (document.id !== user.uid) {
+                    isDeviceUsedByOther = true;
+                }
+            });
+
+            if (isDeviceUsedByOther) {
+                await signOut(auth);
+                throw new Error("device_used");
+            }
+
+            // C. Kiểm tra: Tài khoản này đã đăng nhập ở thiết bị khác chưa?
+            const userDocRef = doc(db, "users", user.uid);
+            const userDocSnap = await getDoc(userDocRef);
+
+            if (userDocSnap.exists()) {
+                const registeredDeviceId = userDocSnap.data().deviceId;
+                if (registeredDeviceId && registeredDeviceId !== currentDeviceId) {
+                    await signOut(auth);
+                    throw new Error("account_locked");
+                }
+            } else {
+                // D. Lần đầu đăng nhập: Khóa tài khoản này vào thiết bị hiện tại
+                await setDoc(userDocRef, {
+                    email: user.email,
+                    deviceId: currentDeviceId,
+                    createdAt: new Date()
+                });
+            }
+
+            // Mọi thứ hợp lệ -> Chuyển hướng
+            goTo('index.html');
+
         } catch (error) {
-            errorMessage.textContent = "Sai email hoặc mật khẩu. Vui lòng thử lại!";
+            // Xử lý các thông báo lỗi tương ứng
+            if (error.message === "device_used") {
+                errorMessage.textContent = "❌ Thiết bị này đã đăng nhập tài khoản khác. 1 máy chỉ dùng 1 tài khoản!";
+            } else if (error.message === "account_locked") {
+                errorMessage.textContent = "❌ Tài khoản này đã được sử dụng ở một thiết bị khác!";
+            } else {
+                errorMessage.textContent = "Sai email hoặc mật khẩu. Vui lòng thử lại!";
+            }
+            
             errorMessage.classList.remove('hidden');
             loginBtn.disabled = false;
             loginSpinner.classList.add('hidden');
+            isLoggingIn = false; // Tắt cờ nếu lỗi
         }
     });
 }
 
-// 2. Kiểm tra trạng thái đăng nhập
+// ------------------------------------------------------------------
+// 2. KIỂM TRA TRẠNG THÁI ĐĂNG NHẬP (Áp dụng toàn trang)
+// ------------------------------------------------------------------
 const currentFileName = window.location.pathname.split('/').pop() || 'index.html';
 const protectedPages = ['kienthuc.html', 'thucchien.html'];
 
@@ -66,22 +137,23 @@ function setNavToLoggedOut() {
     });
 }
 
-// BUG ĐÃ SỬA: bản gốc tìm nút bằng querySelector('nav a[href="./login.html"]'),
-// nhưng nút đó chỉ tồn tại trên index.html — kienthuc.html và thucchien.html
-// không có nút đăng nhập/đăng xuất nào cả. Giờ mọi trang đều có nút mang
-// class "auth-nav-btn" nên logic này áp dụng đồng nhất trên toàn site.
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        if (currentFileName === 'login.html') {
+        // Chỉ tự động chuyển hướng từ trang login NẾU người dùng vừa mở trang (đã đăng nhập từ trước)
+        // Nếu người dùng đang bấm nút đăng nhập (isLoggingIn = true), chờ form submit xử lý
+        if (currentFileName === 'login.html' && !isLoggingIn) {
             goTo('index.html');
-            return; // đang điều hướng đi, không cần gỡ loader ở trang này
+            return;
         }
-        setNavToLoggedIn();
-        hideLoader();
+        
+        if (!isLoggingIn) {
+            setNavToLoggedIn();
+            hideLoader();
+        }
     } else {
         if (protectedPages.includes(currentFileName)) {
             goTo('login.html');
-            return; // đang điều hướng đi, không cần gỡ loader ở trang này
+            return;
         }
         setNavToLoggedOut();
         hideLoader();
