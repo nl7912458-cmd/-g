@@ -11,9 +11,27 @@ export const content = `
     <!-- NỘI DUNG CHÍNH -->
     <div style="position: relative; z-index: 2; padding: 0 10px;">
         
-        <!-- WATERMARK NỀN MỜ Ở GIỮA TRANG (Chữ Đen, Opacity tăng lên 0.22 để nhìn rõ nét hơn) -->
-        <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); opacity: 0.22; z-index: -1; text-align: center; pointer-events: none; width: 100%;">
-            <h1 style="font-size: 65px; font-weight: 900; margin: 0; color: #000000; line-height: 1.1; text-transform: uppercase; letter-spacing: -1px;">TỌA ĐỘ<br>ĐỊNH TÍNH</h1>
+        <!-- WATERMARK LOGO CHÌM CÓ KHUNG TỌA ĐỘ (Vẽ bằng CSS siêu nét) -->
+        <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); opacity: 0.12; z-index: -1; text-align: center; pointer-events: none; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
+            
+            <!-- Khung tròn mô phỏng Logo -->
+            <div style="width: 180px; height: 180px; border: 12px solid #000; border-radius: 50%; position: relative; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                <!-- Trục dọc -->
+                <div style="position: absolute; width: 6px; height: 240px; background: #000; top: -30px; left: calc(50% - 3px);"></div>
+                <!-- Mũi tên trục dọc (Chỉ lên) -->
+                <div style="position: absolute; top: -45px; left: calc(50% - 12px); border-left: 12px solid transparent; border-right: 12px solid transparent; border-bottom: 20px solid #000;"></div>
+                
+                <!-- Trục ngang -->
+                <div style="position: absolute; height: 6px; width: 240px; background: #000; left: -30px; top: calc(50% - 3px);"></div>
+                <!-- Mũi tên trục ngang (Chỉ sang phải) -->
+                <div style="position: absolute; right: -45px; top: calc(50% - 12px); border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 20px solid #000;"></div>
+                
+                <!-- Chữ TĐ ở giữa tâm -->
+                <h1 style="font-size: 70px; font-weight: 900; margin: 0; color: #00a8ff; z-index: 2; line-height: 1; letter-spacing: -2px; text-shadow: 4px 4px 0 #fff, -4px -4px 0 #fff, 4px -4px 0 #fff, -4px 4px 0 #fff;">TĐ</h1>
+            </div>
+
+            <!-- Tên thương hiệu & TikTok -->
+            <h1 style="font-size: 55px; font-weight: 900; margin: 0; color: #000000; line-height: 1.1; text-transform: uppercase; letter-spacing: -1px;">TỌA ĐỘ<br>ĐỊNH TÍNH</h1>
             <p style="font-size: 18px; font-weight: bold; margin-top: 10px; letter-spacing: 2px; color: #00a8ff;">@toado.dinhtinhhsa</p>
         </div>
 
