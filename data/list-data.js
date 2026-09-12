@@ -11,6 +11,13 @@ export const listTaiLieu = [
         title: 'TÀI LIỆU CHUYÊN ĐỀ: TÌM TỪ, THÀNH NGỮ, TỤC NGỮ KHÁC LOẠI',
         description: 'Tuyệt chiêu phân biệt bản chất, cấu tạo và sắc thái nghĩa thay vì dịch nghĩa cảm tính.',
         date: '15/09/2026'
+    },
+    // Thêm block này vào biến listTaiLieu trong file data/list-data.js
+    {
+        id: 'tailieu3',
+        title: 'TÀI LIỆU CHUYÊN ĐỀ: HỆ THỐNG CÁC LOẠI HÌNH VĂN HỌC',
+        description: 'Dấu hiệu nhận diện Tự sự, Trữ tình, Kịch, Ký để xử lý nhanh câu hỏi Đọc hiểu.',
+        date: '18/09/2026'
     }
 ];
 
