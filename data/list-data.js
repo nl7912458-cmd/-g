@@ -54,7 +54,14 @@ export const listTaiLieu = [
         title: 'TÀI LIỆU CHUYÊN ĐỀ: 4 THÀNH PHẦN BIỆT LẬP TRONG CÂU',
         description: 'Nguyên tắc cốt lõi, dấu hiệu nhận diện 4 thành phần biệt lập và bẫy kinh điển phân biệt Tình thái vs Trạng ngữ.',
         date: '28/09/2026'
+        },
+        {
+        id: 'tailieu10',
+        title: 'TÀI LIỆU CHUYÊN ĐỀ: KỸ THUẬT NHẬN DIỆN NHANH CÁC THỂ THƠ',
+        description: 'Bộ công cụ phân loại 3 nhóm thể thơ thường gặp và cách né bẫy nhầm lẫn giữa cấu trúc câu chữ trong thơ.',
+        date: '29/09/2026'
         }
+    
     
     
     
