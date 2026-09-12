@@ -36,7 +36,14 @@ export const listTaiLieu = [
         title: 'TÀI LIỆU CHUYÊN ĐỀ: 6 THAO TÁC LẬP LUẬN CỐT LÕI',
         description: 'Bí quyết phân biệt Giải thích, Phân tích, Chứng minh và cách né bẫy nhầm lẫn thao tác chính.',
         date: '25/09/2026'
+        },
+        {
+        id: 'tailieu7',
+        title: 'TÀI LIỆU CHUYÊN ĐỀ: 5 MÔ HÌNH CẤU TRÚC ĐOẠN VĂN CỐT LÕI',
+        description: 'Bí kíp "Chụp X-Quang" đoạn văn, xác định chính xác vị trí câu chủ đề thông qua 5 mô hình cấu trúc kinh điển.',
+        date: '26/09/2026'
         }
+    
 ];
 
 export const listDeThi = [
