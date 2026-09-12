@@ -11,10 +11,10 @@ export const content = `
     <!-- NỘI DUNG CHÍNH -->
     <div style="position: relative; z-index: 2; padding: 0 10px;">
         
-        <!-- WATERMARK NỀN MỜ Ở GIỮA TRANG (Màu xanh logo) -->
-        <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); opacity: 0.16; z-index: -1; text-align: center; pointer-events: none; width: 100%;">
-            <h1 style="font-size: 65px; font-weight: 900; margin: 0; color: #00a8ff; line-height: 1.1; text-transform: uppercase;">TỌA ĐỘ<br>ĐỊNH TÍNH</h1>
-            <p style="font-size: 18px; font-weight: bold; margin-top: 10px; letter-spacing: 2px; color: #1d1d1f;">@toado.dinhtinhhsa</p>
+        <!-- WATERMARK NỀN MỜ Ở GIỮA TRANG (Chữ Đen, Opacity tăng lên 0.22 để nhìn rõ nét hơn) -->
+        <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); opacity: 0.22; z-index: -1; text-align: center; pointer-events: none; width: 100%;">
+            <h1 style="font-size: 65px; font-weight: 900; margin: 0; color: #000000; line-height: 1.1; text-transform: uppercase; letter-spacing: -1px;">TỌA ĐỘ<br>ĐỊNH TÍNH</h1>
+            <p style="font-size: 18px; font-weight: bold; margin-top: 10px; letter-spacing: 2px; color: #00a8ff;">@toado.dinhtinhhsa</p>
         </div>
 
         <h1 style="font-size: 22px; font-weight: 800; margin-bottom: 12px; color: #1d1d1f; text-align: center; text-transform: uppercase;">TÀI LIỆU CHUYÊN ĐỀ: HỆ THỐNG TỪ LOẠI & DẤU HIỆU NHẬN BIẾT</h1>
