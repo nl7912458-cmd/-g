@@ -48,7 +48,14 @@ export const listTaiLieu = [
         title: 'TÀI LIỆU CHUYÊN ĐỀ: NHẬN DIỆN VÀ PHÂN TÍCH BIỆN PHÁP TU TỪ',
         description: 'Tổng hợp 3 nhóm tu từ cốt lõi, cách gọi tên, dấu hiệu nhận biết, tác dụng và cảnh báo bẫy nhầm lẫn kinh điển.',
         date: '27/09/2026'
+        },
+        {
+        id: 'tailieu9',
+        title: 'TÀI LIỆU CHUYÊN ĐỀ: 4 THÀNH PHẦN BIỆT LẬP TRONG CÂU',
+        description: 'Nguyên tắc cốt lõi, dấu hiệu nhận diện 4 thành phần biệt lập và bẫy kinh điển phân biệt Tình thái vs Trạng ngữ.',
+        date: '28/09/2026'
         }
+    
     
     
 ];
