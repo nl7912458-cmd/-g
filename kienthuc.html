@@ -11,16 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    
-    <!-- Thêm thư viện Mermaid.js để vẽ sơ đồ tư duy tự động -->
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ 
-            startOnLoad: true, 
-            theme: 'neutral', // Nền trắng đen tối giản hợp với Apple style
-            fontFamily: 'Inter, sans-serif'
-        });
-    </script>
 </head>
 <body class="bg-apple-light text-apple-dark antialiased">
 
@@ -49,36 +39,111 @@
 
     <main class="pt-24 pb-16 px-4 mx-auto max-w-6xl">
         
-        <!-- BẮT ĐẦU: KHỐI SƠ ĐỒ TƯ DUY MỚI THÊM VÀO -->
-        <div class="mb-12 bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-gray-100 fade-in-up">
-            <h2 class="text-3xl font-bold mb-4 text-center">Cấu trúc Đề thi Tư duy Định tính</h2>
-            <p class="text-gray-500 text-center mb-8">Tổng quan các phần kiến thức trọng tâm xuất hiện trong đề thi ĐGNL ĐHQGHN</p>
-            <div class="flex justify-center overflow-x-auto">
-                <pre class="mermaid">
-                    mindmap
-                      root((Tư duy Định tính
-                      50 câu - 60 phút))
-                        Từ vựng - Ngữ nghĩa
-                          Tìm từ khác nhóm
-                          Điền từ chỗ trống
-                        Lỗi diễn đạt
-                          Sai ngữ pháp
-                          Sai logic
-                          Sai phong cách
-                          Sai ngữ nghĩa
-                        Đọc hiểu văn bản
-                          Văn bản Khoa học - Xã hội
-                            Nội dung chính và Lập luận
-                            Mục đích của số liệu
-                          Văn bản Văn học
-                            Biện pháp tu từ
-                            Ý nghĩa hình ảnh
-                            Đặc điểm nhân vật
-                            Cấu tạo từ vựng
-                </pre>
+        <!-- BẮT ĐẦU: KHỐI SƠ ĐỒ TƯ DUY PHONG CÁCH APPLE -->
+        <div class="mb-12 fade-in-up">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold mb-3 tracking-tight">Cấu trúc Đề thi Tư duy Định tính</h2>
+                <p class="text-gray-500 font-medium">Khung kiến thức chuẩn dựa trên đề minh họa ĐHQGHN</p>
+            </div>
+
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Root Node (Gốc) -->
+                <div class="mx-auto w-full max-w-sm bg-white p-6 rounded-[2rem] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 text-center relative z-10 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow">
+                    <div class="w-12 h-12 bg-apple-light rounded-2xl mx-auto mb-4 flex items-center justify-center text-apple-blue">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-apple-dark mb-1">Tư duy Định tính</h3>
+                    <p class="text-apple-blue font-semibold text-sm">50 Câu hỏi • 60 Phút</p>
+                </div>
+
+                <!-- Đường kẻ nối (Chỉ hiện trên màn hình lớn) -->
+                <div class="hidden md:block relative w-full h-12 z-0">
+                    <!-- Nét dọc từ gốc -->
+                    <div class="absolute left-1/2 top-0 w-px h-6 bg-gray-200 -translate-x-1/2"></div>
+                    <!-- Nét ngang -->
+                    <div class="absolute top-6 left-[16.666%] right-[16.666%] h-px bg-gray-200"></div>
+                    <!-- 3 Nét dọc xuống thẻ -->
+                    <div class="absolute top-6 left-[16.666%] w-px h-6 bg-gray-200"></div>
+                    <div class="absolute top-6 left-1/2 w-px h-6 bg-gray-200 -translate-x-1/2"></div>
+                    <div class="absolute top-6 right-[16.666%] w-px h-6 bg-gray-200"></div>
+                </div>
+
+                <!-- Spacer cho mobile (thay thế đường kẻ) -->
+                <div class="md:hidden h-6"></div>
+
+                <!-- 3 Nhánh (Lá) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 relative z-10">
+                    
+                    <!-- Nhánh 1 -->
+                    <div class="bg-white p-8 rounded-[2rem] shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 transform hover:-translate-y-1">
+                        <h4 class="text-lg font-semibold mb-6 flex items-center">
+                            <span class="w-2 h-6 rounded-full bg-blue-400 mr-3"></span>
+                            Từ vựng - Ngữ nghĩa
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-sm text-gray-600 font-medium">Tìm từ khác nhóm ý nghĩa/loại từ</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-sm text-gray-600 font-medium">Điền từ thích hợp vào chỗ trống</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="text-sm text-gray-600 font-medium">Đoán nghĩa qua ngữ cảnh</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Nhánh 2 -->
+                    <div class="bg-white p-8 rounded-[2rem] shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 transform hover:-translate-y-1">
+                        <h4 class="text-lg font-semibold mb-6 flex items-center">
+                            <span class="w-2 h-6 rounded-full bg-purple-400 mr-3"></span>
+                            Lỗi diễn đạt
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                <span class="text-sm text-gray-600 font-medium">Lỗi sai cấu trúc ngữ pháp</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                <span class="text-sm text-gray-600 font-medium">Lỗi mâu thuẫn logic</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                <span class="text-sm text-gray-600 font-medium">Lỗi phong cách ngôn ngữ</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Nhánh 3 -->
+                    <div class="bg-white p-8 rounded-[2rem] shadow-[0_2px_10px_rgba(0,0,0,0.02)] border border-gray-100 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all duration-300 transform hover:-translate-y-1">
+                        <h4 class="text-lg font-semibold mb-6 flex items-center">
+                            <span class="w-2 h-6 rounded-full bg-emerald-400 mr-3"></span>
+                            Đọc hiểu văn bản
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                <span class="text-sm text-gray-600 font-medium">Văn bản Khoa học & Xã hội (Lập luận, số liệu)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                <span class="text-sm text-gray-600 font-medium">Văn bản Văn học (Biện pháp tu từ, hình tượng)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-gray-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                <span class="text-sm text-gray-600 font-medium">Phân tích tính cách nhân vật & tình huống</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
         </div>
-        <!-- KẾT THÚC: KHỐI SƠ ĐỒ TƯ DUY -->
+        <!-- KẾT THÚC: KHỐI SƠ ĐỒ TƯ DUY PHONG CÁCH APPLE -->
 
         <div id="listView" class="fade-in-up">
             <h2 class="text-3xl font-bold mb-8">Tài liệu học tập</h2>
