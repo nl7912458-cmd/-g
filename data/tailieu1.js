@@ -2,7 +2,7 @@
 export const content = `
 <div style="font-family: 'Inter', system-ui, sans-serif; color: #1d1d1f; max-width: 800px; margin: 0 auto; background: #ffffff; padding: 20px; position: relative;">
     
-    <!-- KHUNG HEADER MÀU XANH LOGO -->
+    <!-- KHUNG HEADER -->
     <div style="background-color: #00a8ff; color: white; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 24px; border-radius: 4px;">
         <span>TĐĐT_ĐGNL</span>
         <span>TỌA ĐỘ ĐỊNH TÍNH - LUYỆN THI ĐGNL</span>
@@ -11,28 +11,9 @@ export const content = `
     <!-- NỘI DUNG CHÍNH -->
     <div style="position: relative; z-index: 2; padding: 0 10px;">
         
-        <!-- WATERMARK LOGO CHÌM CÓ KHUNG TỌA ĐỘ (Vẽ bằng CSS siêu nét) -->
-        <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); opacity: 0.12; z-index: -1; text-align: center; pointer-events: none; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
-            
-            <!-- Khung tròn mô phỏng Logo -->
-            <div style="width: 180px; height: 180px; border: 12px solid #000; border-radius: 50%; position: relative; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-                <!-- Trục dọc -->
-                <div style="position: absolute; width: 6px; height: 240px; background: #000; top: -30px; left: calc(50% - 3px);"></div>
-                <!-- Mũi tên trục dọc (Chỉ lên) -->
-                <div style="position: absolute; top: -45px; left: calc(50% - 12px); border-left: 12px solid transparent; border-right: 12px solid transparent; border-bottom: 20px solid #000;"></div>
-                
-                <!-- Trục ngang -->
-                <div style="position: absolute; height: 6px; width: 240px; background: #000; left: -30px; top: calc(50% - 3px);"></div>
-                <!-- Mũi tên trục ngang (Chỉ sang phải) -->
-                <div style="position: absolute; right: -45px; top: calc(50% - 12px); border-top: 12px solid transparent; border-bottom: 12px solid transparent; border-left: 20px solid #000;"></div>
-                
-                <!-- Chữ TĐ ở giữa tâm -->
-                <h1 style="font-size: 70px; font-weight: 900; margin: 0; color: #00a8ff; z-index: 2; line-height: 1; letter-spacing: -2px; text-shadow: 4px 4px 0 #fff, -4px -4px 0 #fff, 4px -4px 0 #fff, -4px 4px 0 #fff;">TĐ</h1>
-            </div>
-
-            <!-- Tên thương hiệu & TikTok -->
-            <h1 style="font-size: 55px; font-weight: 900; margin: 0; color: #000000; line-height: 1.1; text-transform: uppercase; letter-spacing: -1px;">TỌA ĐỘ<br>ĐỊNH TÍNH</h1>
-            <p style="font-size: 18px; font-weight: bold; margin-top: 10px; letter-spacing: 2px; color: #00a8ff;">@toado.dinhtinhhsa</p>
+        <!-- WATERMARK DÙNG ẢNH LOGO GỐC TỪ THƯ MỤC "Anh" -->
+        <div style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: -1; text-align: center; pointer-events: none; width: 100%;">
+            <img src="./Anh/1.png" alt="Logo Tọa Độ Định Tính" style="width: 350px; opacity: 0.15; filter: grayscale(100%);">
         </div>
 
         <h1 style="font-size: 22px; font-weight: 800; margin-bottom: 12px; color: #1d1d1f; text-align: center; text-transform: uppercase;">TÀI LIỆU CHUYÊN ĐỀ: HỆ THỐNG TỪ LOẠI & DẤU HIỆU NHẬN BIẾT</h1>
@@ -40,7 +21,7 @@ export const content = `
             Để xử lý tốt các câu hỏi về ngữ pháp, sửa lỗi sai câu hoặc đọc hiểu trong đề thi Đánh giá năng lực, học sinh cần nắm vững bản chất của các loại từ. Dưới đây là hệ thống phân loại chuẩn mực, kèm theo "phép thử" để nhận diện nhanh chóng trong phòng thi.
         </p>
 
-        <!-- TIÊU ĐỀ PHỤ MÀU XANH LOGO -->
+        <!-- TIÊU ĐỀ PHỤ -->
         <h2 style="font-size: 16px; font-weight: 700; margin-top: 20px; margin-bottom: 10px; color: #00a8ff; border-bottom: 2px solid #e0f2fe; padding-bottom: 4px;">PHẦN 1: NHÓM TỪ MANG Ý NGHĨA THỰC (THỰC TỪ)</h2>
         <p style="font-size: 13px; color: #4b5563; margin-bottom: 10px; font-style: italic;">Nhóm từ cấu tạo nên thành phần chính của câu (Chủ ngữ - Vị ngữ). Thí sinh thường bị nhầm lẫn giữa Động từ chỉ trạng thái và Tính từ.</p>
 
@@ -71,7 +52,7 @@ export const content = `
             </ul>
         </div>
 
-        <!-- TIÊU ĐỀ PHỤ MÀU XANH LOGO -->
+        <!-- TIÊU ĐỀ PHỤ -->
         <h2 style="font-size: 16px; font-weight: 700; margin-top: 20px; margin-bottom: 10px; color: #00a8ff; border-bottom: 2px solid #e0f2fe; padding-bottom: 4px;">PHẦN 2: NHÓM TỪ THAY THẾ VÀ BỔ TRỢ (HƯ TỪ)</h2>
         <p style="font-size: 13px; color: #4b5563; margin-bottom: 10px; font-style: italic;">Không mang ý nghĩa sự vật độc lập, chuyên dùng liên kết câu hoặc bộc lộ sắc thái (Hay bị bẫy ở câu hỏi tìm lỗi sai).</p>
 
