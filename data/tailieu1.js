@@ -5,7 +5,7 @@ export const content = `
     <!-- WATERMARK (Tuyệt đối an toàn cho xuất PDF: Dùng margin và text-align) -->
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-align: center; z-index: -1; pointer-events: none;">
         <!-- Đã gắn chuẩn file 1.png của bạn -->
-        <img src="./Anh/1.png" style="width: 350px; margin-top: 250px; opacity: 0.15; filter: grayscale(100%); display: inline-block;">
+        <img src="./Anh/1.png" style="width: 350px; margin-top: 250px; opacity: 0.3; filter: grayscale(100%); display: inline-block;">
     </div>
 
     <!-- NỘI DUNG CHÍNH -->
