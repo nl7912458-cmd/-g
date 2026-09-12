@@ -1,10 +1,11 @@
 // data/tailieu1.js
 export const content = `
-<div style="font-family: 'Inter', system-ui, sans-serif; color: #1d1d1f; max-width: 800px; margin: 0 auto; background: #ffffff; padding: 20px; position: relative; min-height: 800px; z-index: 0;">
+<div style="font-family: 'Inter', system-ui, sans-serif; color: #1d1d1f; max-width: 800px; margin: 0 auto; background: #ffffff; padding: 20px; position: relative; min-height: 800px; z-index: 1;">
     
-    <!-- WATERMARK (Đã fix mượt cho html2pdf: Bỏ transform, dùng text-align) -->
-    <div style="position: absolute; top: 350px; left: 0; right: 0; width: 100%; text-align: center; z-index: -1; pointer-events: none; opacity: 0.15; filter: grayscale(100%);">
-        <img src="https://nl7912458-cmd.github.io/Ghd/Anh/1.png" alt="Watermark" style="width: 350px; display: inline-block; margin: 0 auto;">
+    <!-- WATERMARK (Tuyệt đối an toàn cho xuất PDF: Dùng margin và text-align) -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-align: center; z-index: -1; pointer-events: none;">
+        <!-- Đã gắn chuẩn file 1.png của bạn -->
+        <img src="./Anh/1.png" style="width: 350px; margin-top: 250px; opacity: 0.15; filter: grayscale(100%); display: inline-block;">
     </div>
 
     <!-- NỘI DUNG CHÍNH -->
