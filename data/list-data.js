@@ -66,9 +66,13 @@ export const listTaiLieu = [
         title: 'TÀI LIỆU CHUYÊN ĐỀ: 4 CHIẾN THUẬT ĐỌC HIỂU "THỰC CHIẾN" TRÊN GIAO DIỆN MÁY TÍNH',
         description: 'Bí kíp tối ưu hóa thao tác mắt, tay và giấy nháp khi làm bài thi ĐGNL 100% trên giao diện máy tính (CBT).',
         date: '30/09/2026'
+        },
+        {
+        id: 'tailieu12',
+        title: 'TÀI LIỆU CHUYÊN ĐỀ: "MÁY QUÉT" 4 LỖI SAI KINH ĐIỂN TRONG CÂU',
+        description: 'Bí kíp 4 lớp quét "X-Quang" giúp bạn bắt gọn các lỗi thiếu Chủ-Vị, thừa từ, sai logic và từ Hán Việt bị đánh tráo.',
+        date: '01/10/2026'
         }
-    
-    
     
     
     
