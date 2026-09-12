@@ -2,8 +2,8 @@
 export const listTaiLieu = [
     {
         id: 'tailieu1',
-        title: 'Chuyên đề: Con lắc lò xo & Lực đàn hồi',
-        description: 'Hệ thống công thức độc lập với thời gian và kỹ thuật tối ưu hóa.',
+        title: 'TÀI LIỆU CHUYÊN ĐỀ: HỆ THỐNG TỪ LOẠI & DẤU HIỆU NHẬN BIẾT',
+        description: 'Các loại từ trong tiếng Việt .',
         
     },
     {
