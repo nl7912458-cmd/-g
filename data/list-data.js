@@ -42,7 +42,14 @@ export const listTaiLieu = [
         title: 'TÀI LIỆU CHUYÊN ĐỀ: 5 MÔ HÌNH CẤU TRÚC ĐOẠN VĂN CỐT LÕI',
         description: 'Bí kíp "Chụp X-Quang" đoạn văn, xác định chính xác vị trí câu chủ đề thông qua 5 mô hình cấu trúc kinh điển.',
         date: '26/09/2026'
+        },
+        {
+        id: 'tailieu8',
+        title: 'TÀI LIỆU CHUYÊN ĐỀ: NHẬN DIỆN VÀ PHÂN TÍCH BIỆN PHÁP TU TỪ',
+        description: 'Tổng hợp 3 nhóm tu từ cốt lõi, cách gọi tên, dấu hiệu nhận biết, tác dụng và cảnh báo bẫy nhầm lẫn kinh điển.',
+        date: '27/09/2026'
         }
+    
     
 ];
 
