@@ -2,19 +2,19 @@
 export const content = `
 <div style="font-family: 'Inter', system-ui, sans-serif; color: #1d1d1f; max-width: 800px; margin: 0 auto; background: #ffffff; padding: 20px; position: relative;">
     
-    <!-- KHUNG HEADER ĐỎ ĐẶC TRƯNG -->
-    <div style="background-color: #b91c1c; color: white; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 24px; border-radius: 4px;">
+    <!-- KHUNG HEADER MÀU XANH LOGO -->
+    <div style="background-color: #00a8ff; color: white; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 24px; border-radius: 4px;">
         <span>TĐĐT_ĐGNL</span>
         <span>TỌA ĐỘ ĐỊNH TÍNH - LUYỆN THI ĐGNL</span>
     </div>
 
-    <!-- NỘI DUNG CHÍNH (Được bọc trong một khối tương đối để chèn Watermark nền mờ) -->
+    <!-- NỘI DUNG CHÍNH -->
     <div style="position: relative; z-index: 2; padding: 0 10px;">
         
-        <!-- WATERMARK NỀN MỜ Ở GIỮA TRANG -->
-        <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); opacity: 0.07; z-index: -1; text-align: center; pointer-events: none; width: 100%;">
-            <h1 style="font-size: 65px; font-weight: 900; margin: 0; color: #0066cc; line-height: 1.1; text-transform: uppercase;">TỌA ĐỘ<br>ĐỊNH TÍNH</h1>
-            <p style="font-size: 18px; font-weight: bold; margin-top: 10px; letter-spacing: 2px;">@toado.dinhtinhhsa</p>
+        <!-- WATERMARK NỀN MỜ Ở GIỮA TRANG (Màu xanh logo) -->
+        <div style="position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); opacity: 0.16; z-index: -1; text-align: center; pointer-events: none; width: 100%;">
+            <h1 style="font-size: 65px; font-weight: 900; margin: 0; color: #00a8ff; line-height: 1.1; text-transform: uppercase;">TỌA ĐỘ<br>ĐỊNH TÍNH</h1>
+            <p style="font-size: 18px; font-weight: bold; margin-top: 10px; letter-spacing: 2px; color: #1d1d1f;">@toado.dinhtinhhsa</p>
         </div>
 
         <h1 style="font-size: 22px; font-weight: 800; margin-bottom: 12px; color: #1d1d1f; text-align: center; text-transform: uppercase;">TÀI LIỆU CHUYÊN ĐỀ: HỆ THỐNG TỪ LOẠI & DẤU HIỆU NHẬN BIẾT</h1>
@@ -22,11 +22,12 @@ export const content = `
             Để xử lý tốt các câu hỏi về ngữ pháp, sửa lỗi sai câu hoặc đọc hiểu trong đề thi Đánh giá năng lực, học sinh cần nắm vững bản chất của các loại từ. Dưới đây là hệ thống phân loại chuẩn mực, kèm theo "phép thử" để nhận diện nhanh chóng trong phòng thi.
         </p>
 
-        <h2 style="font-size: 16px; font-weight: 700; margin-top: 20px; margin-bottom: 10px; color: #b91c1c; border-bottom: 2px solid #fee2e2; padding-bottom: 4px;">PHẦN 1: NHÓM TỪ MANG Ý NGHĨA THỰC (THỰC TỪ)</h2>
+        <!-- TIÊU ĐỀ PHỤ MÀU XANH LOGO -->
+        <h2 style="font-size: 16px; font-weight: 700; margin-top: 20px; margin-bottom: 10px; color: #00a8ff; border-bottom: 2px solid #e0f2fe; padding-bottom: 4px;">PHẦN 1: NHÓM TỪ MANG Ý NGHĨA THỰC (THỰC TỪ)</h2>
         <p style="font-size: 13px; color: #4b5563; margin-bottom: 10px; font-style: italic;">Nhóm từ cấu tạo nên thành phần chính của câu (Chủ ngữ - Vị ngữ). Thí sinh thường bị nhầm lẫn giữa Động từ chỉ trạng thái và Tính từ.</p>
 
         <div style="margin-bottom: 14px;">
-            <h3 style="font-size: 14px; font-weight: 600; color: #0066cc; margin-bottom: 4px;">1. Danh từ (Chỉ sự vật, hiện tượng, khái niệm)</h3>
+            <h3 style="font-size: 14px; font-weight: 700; color: #1d1d1f; margin-bottom: 4px;">1. Danh từ (Chỉ sự vật, hiện tượng, khái niệm)</h3>
             <ul style="font-size: 13px; color: #374151; margin: 0; padding-left: 20px; line-height: 1.5;">
                 <li><strong>Dấu hiệu:</strong> Kết hợp với số lượng từ phía trước (những, các, mọi) hoặc từ chỉ định phía sau (này, kia).</li>
                 <li><strong>Ví dụ:</strong> (Những) học sinh (này), (mọi) suy nghĩ, (các) niềm vui.</li>
@@ -35,7 +36,7 @@ export const content = `
         </div>
 
         <div style="margin-bottom: 14px;">
-            <h3 style="font-size: 14px; font-weight: 600; color: #0066cc; margin-bottom: 4px;">2. Động từ (Chỉ hành động, trạng thái)</h3>
+            <h3 style="font-size: 14px; font-weight: 700; color: #1d1d1f; margin-bottom: 4px;">2. Động từ (Chỉ hành động, trạng thái)</h3>
             <ul style="font-size: 13px; color: #374151; margin: 0; padding-left: 20px; line-height: 1.5;">
                 <li><strong>Dấu hiệu:</strong> Kết hợp với phó từ thời gian/mệnh lệnh phía trước: đã, đang, sẽ, sắp, hãy, đừng, chớ.</li>
                 <li><strong>Ví dụ:</strong> (Đang) chạy, (đã) suy nghĩ, (đừng) buồn.</li>
@@ -44,7 +45,7 @@ export const content = `
         </div>
 
         <div style="margin-bottom: 16px;">
-            <h3 style="font-size: 14px; font-weight: 600; color: #0066cc; margin-bottom: 4px;">3. Tính từ (Chỉ đặc điểm, tính chất)</h3>
+            <h3 style="font-size: 14px; font-weight: 700; color: #1d1d1f; margin-bottom: 4px;">3. Tính từ (Chỉ đặc điểm, tính chất)</h3>
             <ul style="font-size: 13px; color: #374151; margin: 0; padding-left: 20px; line-height: 1.5;">
                 <li><strong>Dấu hiệu:</strong> Kết hợp với từ chỉ mức độ như: rất, hơi, khá, quá, lắm, vô cùng.</li>
                 <li><strong>Ví dụ:</strong> (Rất) đẹp, (hơi) mệt, thông minh (lắm).</li>
@@ -52,11 +53,12 @@ export const content = `
             </ul>
         </div>
 
-        <h2 style="font-size: 16px; font-weight: 700; margin-top: 20px; margin-bottom: 10px; color: #b91c1c; border-bottom: 2px solid #fee2e2; padding-bottom: 4px;">PHẦN 2: NHÓM TỪ THAY THẾ VÀ BỔ TRỢ (HƯ TỪ)</h2>
+        <!-- TIÊU ĐỀ PHỤ MÀU XANH LOGO -->
+        <h2 style="font-size: 16px; font-weight: 700; margin-top: 20px; margin-bottom: 10px; color: #00a8ff; border-bottom: 2px solid #e0f2fe; padding-bottom: 4px;">PHẦN 2: NHÓM TỪ THAY THẾ VÀ BỔ TRỢ (HƯ TỪ)</h2>
         <p style="font-size: 13px; color: #4b5563; margin-bottom: 10px; font-style: italic;">Không mang ý nghĩa sự vật độc lập, chuyên dùng liên kết câu hoặc bộc lộ sắc thái (Hay bị bẫy ở câu hỏi tìm lỗi sai).</p>
 
         <div style="margin-bottom: 14px;">
-            <h3 style="font-size: 14px; font-weight: 600; color: #0066cc; margin-bottom: 4px;">1. Đại từ & 2. Quan hệ từ & 3. Phó từ</h3>
+            <h3 style="font-size: 14px; font-weight: 700; color: #1d1d1f; margin-bottom: 4px;">1. Đại từ & 2. Quan hệ từ & 3. Phó từ</h3>
             <ul style="font-size: 13px; color: #374151; margin: 0; padding-left: 20px; line-height: 1.5;">
                 <li><strong>Đại từ:</strong> Dùng trỏ/thay thế (tôi, ta, hắn, thế, vậy, ai, gì...) nhằm tránh lặp từ.</li>
                 <li><strong>Quan hệ từ:</strong> Biểu thị quan hệ ý nghĩa (và, với, nhưng, của, ở, bằng, như, để...). <em>Lỗi kinh điển:</em> Dùng sai/thừa quan hệ từ gây mất chủ ngữ (Ví dụ: "Qua tác phẩm cho ta thấy..." -> Thừa chữ "Qua").</li>
@@ -69,7 +71,7 @@ export const content = `
     <!-- CHÂN TRANG (FOOTER) CHỨA LINK TIKTOK -->
     <div style="margin-top: 30px; border-top: 1px solid #e5e7eb; padding-top: 14px; text-align: center; font-size: 12px; color: #4b5563;">
         Theo dõi kênh TikTok chính thức để nhận thêm mẹo định tính: 
-        <a href="https://www.tiktok.com/@toado.dinhtinhhsa?_r=1&_t=ZS-99fiBWJaql5" target="_blank" style="color: #0066cc; font-weight: bold; text-decoration: none;">
+        <a href="https://www.tiktok.com/@toado.dinhtinhhsa?_r=1&_t=ZS-99fiBWJaql5" target="_blank" style="color: #00a8ff; font-weight: bold; text-decoration: none;">
             @toado.dinhtinhhsa
         </a>
     </div>
