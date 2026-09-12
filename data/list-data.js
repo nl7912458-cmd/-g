@@ -60,7 +60,14 @@ export const listTaiLieu = [
         title: 'TÀI LIỆU CHUYÊN ĐỀ: KỸ THUẬT NHẬN DIỆN NHANH CÁC THỂ THƠ',
         description: 'Bộ công cụ phân loại 3 nhóm thể thơ thường gặp và cách né bẫy nhầm lẫn giữa cấu trúc câu chữ trong thơ.',
         date: '29/09/2026'
+        },
+        {
+        id: 'tailieu11',
+        title: 'TÀI LIỆU CHUYÊN ĐỀ: 4 CHIẾN THUẬT ĐỌC HIỂU "THỰC CHIẾN" TRÊN GIAO DIỆN MÁY TÍNH',
+        description: 'Bí kíp tối ưu hóa thao tác mắt, tay và giấy nháp khi làm bài thi ĐGNL 100% trên giao diện máy tính (CBT).',
+        date: '30/09/2026'
         }
+    
     
     
     
