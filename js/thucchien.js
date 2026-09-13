@@ -45,27 +45,32 @@ function renderExamList() {
 // 2. Bắt đầu bài thi
 async function startExam(examInfo) {
     try {
-        // BUG ĐÃ SỬA: giống lỗi ở kienthuc.js — dấu "\" thừa trước backtick
-        // và "${...}" làm hỏng template literal, khiến import luôn thất bại.
         const module = await import(`../data/${examInfo.id}.js`);
         currentExamData = module.examData;
 
-        // Reset form cũ (phòng khi user thi lại một đề)
+        // Reset form cũ và ẩn các giải thích của lần thi trước
         quizForm.reset();
+        questionsContainer.classList.remove('show-explanation');
 
         // Chuyển đổi giao diện
         examListView.classList.add('hidden');
         examDetailView.classList.remove('hidden');
         resultBox.classList.add('hidden');
         quizForm.classList.remove('hidden');
-        submitBtn.classList.remove('hidden');
+        
+        // Hiện lại khu vực nút Nộp bài
+        if(submitBtn.parentElement.id === 'submitContainer') {
+            submitBtn.parentElement.classList.remove('hidden');
+        } else {
+            submitBtn.classList.remove('hidden');
+        }
 
         // Hiện thanh Timer, ẩn thanh Nav mặc định
         mainNav.classList.add('hidden');
         timerBar.classList.remove('hidden');
         examTitleDisplay.textContent = examInfo.title;
 
-        // Reset giao diện Timer về bình thường (phòng khi thi đề trước đã hết giờ)
+        // Reset giao diện Timer về bình thường
         timerBar.classList.remove('bg-red-500', 'text-white');
         timerBar.classList.add('bg-white/90');
         timeDisplay.classList.remove('text-white');
@@ -74,7 +79,7 @@ async function startExam(examInfo) {
         // Render câu hỏi
         renderQuestions();
 
-        // Bắt đầu đếm ngược (examInfo.time là phút)
+        // Bắt đầu đếm ngược
         timeLeft = examInfo.time * 60;
         updateTimerDisplay();
         clearInterval(timerInterval);
@@ -105,9 +110,27 @@ function renderQuestions() {
             `;
         }
 
+        // Kiểm tra xem câu hỏi có chứa đoạn văn (passage) hay không
+        const passageHTML = q.passage ? `<div class="mb-6 p-5 bg-blue-50/50 text-blue-900 rounded-xl text-sm italic leading-relaxed border border-blue-100">${q.passage}</div>` : '';
+        
+        // Lấy giải thích (nếu có), nếu không có báo mặc định
+        const explanationText = q.explanation || 'Không có giải thích chi tiết cho câu hỏi này.';
+
         qDiv.innerHTML = `
-            <h4 class="text-lg font-semibold mb-4 text-apple-dark">Câu ${index + 1}: ${q.question}</h4>
+            ${passageHTML}
+            <h4 class="text-lg font-semibold mb-5 text-apple-dark">
+                <span class="mr-2 text-apple-blue">Câu ${index + 1}:</span>${q.question}
+            </h4>
             <div class="space-y-3">${optionsHTML}</div>
+            
+            <!-- Khối giải thích (Bị ẩn mặc định bằng class, hiện khi nộp bài) -->
+            <div class="explanation-box mt-6 p-5 bg-green-50/60 text-green-900 rounded-xl border border-green-100">
+                <p class="font-bold mb-2 text-sm text-green-700 flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Giải thích đáp án:
+                </p>
+                <p class="text-sm leading-relaxed">${explanationText}</p>
+            </div>
         `;
         questionsContainer.appendChild(qDiv);
     });
@@ -145,7 +168,13 @@ function submitExam() {
     // Ẩn thanh Timer, hiện lại Nav
     timerBar.classList.add('hidden');
     mainNav.classList.remove('hidden');
-    submitBtn.classList.add('hidden'); // Ẩn nút nộp
+    
+    // Ẩn khu vực nút Nộp bài
+    if(submitBtn.parentElement.id === 'submitContainer') {
+        submitBtn.parentElement.classList.add('hidden');
+    } else {
+        submitBtn.classList.add('hidden'); 
+    }
 
     let score = 0;
     const total = currentExamData.length;
@@ -171,7 +200,7 @@ function submitExam() {
                 const checkedLabel = qBlock.querySelector(`input[value="${userAnswer}"]`).parentElement;
                 checkedLabel.classList.add('bg-red-50', 'border-red-400');
             }
-            // Khoanh xanh đáp án đúng để user biết, kể cả khi user bỏ trống câu này
+            // Khoanh xanh đáp án đúng để user biết, kể cả khi user bỏ trống
             correctLabel.classList.add('bg-green-50', 'border-green-400', 'ring-1', 'ring-green-400');
         }
     });
@@ -179,6 +208,9 @@ function submitExam() {
     // Hiện điểm
     resultBox.classList.remove('hidden');
     scoreDisplay.textContent = `${score}/${total}`;
+
+    // HIỆN TẤT CẢ GIẢI THÍCH
+    questionsContainer.classList.add('show-explanation');
 
     // Tự động cuộn lên xem điểm
     window.scrollTo({ top: 0, behavior: 'smooth' });
