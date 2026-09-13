@@ -400,7 +400,226 @@ export const examData = [
         },
         correctAnswer: "C",
         explanation: "Dữ kiện: 'Sự ẩn danh trên internet tạo ra \"hiệu ứng giải ức chế\"...'"
-    },
+    },  
     {
         id: 33,
-        passage: "\"Tình
+        passage: "\"Tình trạng bắt nạt trên không gian mạng (cyberbullying)...\"",
+        question: "Theo tác giả, đâu KHÔNG phải là hậu quả của nạn bắt nạt trên không gian mạng?",
+        options: {
+            A: "Trầm cảm, cô lập.",
+            B: "Suy giảm kết quả học tập.",
+            C: "Gia tăng tội phạm tài chính.",
+            D: "Nạn nhân có thể tìm đến tự tử."
+        },
+        correctAnswer: "C",
+        explanation: "Tội phạm tài chính hoàn toàn không được đề cập trong văn bản như một hậu quả của cyberbullying."
+    },
+    {
+        id: 34,
+        passage: "\"Tình trạng bắt nạt trên không gian mạng (cyberbullying)...\"",
+        question: "Để giải quyết vấn nạn này, tác giả đề xuất sự phối hợp của những chủ thể nào?",
+        options: {
+            A: "Nền tảng mạng xã hội, gia đình, nhà trường.",
+            B: "Công an, chính quyền địa phương, luật sư.",
+            C: "Bác sĩ tâm lý, giáo viên, phụ huynh.",
+            D: "Người nổi tiếng, báo chí, cộng đồng mạng."
+        },
+        correctAnswer: "A",
+        explanation: "Dữ kiện: '...từ các nền tảng mạng xã hội..., gia đình..., đến... nhà trường.'"
+    },
+    {
+        id: 35,
+        passage: "\"Tình trạng bắt nạt trên không gian mạng (cyberbullying)...\"",
+        question: "Cụm từ 'kỹ năng số (digital literacy)' trong bài viết ngụ ý điều gì?",
+        options: {
+            A: "Khả năng lập trình máy tính cơ bản.",
+            B: "Năng lực sử dụng, hiểu và ứng xử văn minh, an toàn trên môi trường mạng.",
+            C: "Kỹ năng sửa chữa các thiết bị điện tử.",
+            D: "Kỹ năng tạo ra các video lan truyền trên mạng."
+        },
+        correctAnswer: "B",
+        explanation: "Digital literacy (Kỹ năng số) là năng lực hiểu biết, đánh giá thông tin và ứng xử an toàn, văn minh trên môi trường số hóa."
+    },
+    {
+        id: 36,
+        question: "Đọc đoạn thơ sau:\nNgười ra đi đầu không ngoảnh lại\nSau lưng thềm nắng lá rơi đầy\n(Đất nước - Nguyễn Đình Thi)\nHai câu thơ trên sử dụng biện pháp nghệ thuật gì để diễn tả tâm trạng của người ra đi?",
+        options: {
+            A: "Ẩn dụ",
+            B: "Tả cảnh ngụ tình",
+            C: "Điệp ngữ",
+            D: "Nói quá"
+        },
+        correctAnswer: "B",
+        explanation: "Nhà thơ mượn cảnh 'nắng lá rơi đầy' để diễn tả tâm trạng vừa dứt khoát, vừa lưu luyến của người ra đi."
+    },
+    {
+        id: 37,
+        question: "Xác định nghĩa của từ 'chín' trong câu: \"Anh ấy đã suy nghĩ rất chín trước khi đưa ra quyết định.\"",
+        options: {
+            A: "Chỉ trạng thái thức ăn đã được đun nấu kỹ.",
+            B: "Chỉ màu sắc đậm đà của quả cây.",
+            C: "Chỉ sự thấu đáo, kỹ lưỡng, sâu sắc trong suy nghĩ.",
+            D: "Chỉ số đếm (số 9)."
+        },
+        correctAnswer: "C",
+        explanation: "Từ 'chín' ở đây được dùng với nghĩa chuyển, chỉ sự suy nghĩ kỹ lưỡng, thấu đáo."
+    },
+    {
+        id: 38,
+        question: "Đâu là câu ghép trong các câu sau?",
+        options: {
+            A: "Dưới bóng tre xanh, ta gìn giữ một nền văn hóa lâu đời.",
+            B: "Mưa rào rào trên sân gạch, mưa đồm độp trên phên nứa.",
+            C: "Những cánh đồng lúa chín vàng ươm trải dài tít tắp.",
+            D: "Qua khe lá, những tia nắng ban mai nhảy nhót vui đùa."
+        },
+        correctAnswer: "B",
+        explanation: "Câu B có 2 cụm Chủ - Vị độc lập: Mưa (C) - rào rào (V), mưa (C) - đồm độp (V)."
+    },
+    {
+        id: 39,
+        question: "Đọc câu sau: \"Trời mưa to nên chúng tôi phải hủy buổi dã ngoại.\" Đây là câu có cấu trúc chỉ quan hệ gì?",
+        options: {
+            A: "Tương phản.",
+            B: "Nhượng bộ - Tăng tiến.",
+            C: "Điều kiện - Kết quả.",
+            D: "Nguyên nhân - Kết quả."
+        },
+        correctAnswer: "D",
+        explanation: "Nguyên nhân là 'Trời mưa to' dẫn đến kết quả là 'phải hủy buổi dã ngoại' (có cặp quan hệ từ: vì... nên... ẩn 'vì')."
+    },
+    {
+        id: 40,
+        question: "Ai là tác giả của tiểu thuyết \"Số đỏ\"?",
+        options: {
+            A: "Nam Cao",
+            B: "Vũ Trọng Phụng",
+            C: "Thạch Lam",
+            D: "Ngô Tất Tố"
+        },
+        correctAnswer: "B",
+        explanation: "Nhà văn Vũ Trọng Phụng, được mệnh danh là 'Ông vua phóng sự đất Bắc'."
+    },
+    {
+        id: 41,
+        question: "Cụm từ \"Đầu voi đuôi chuột\" mang ý nghĩa gì?",
+        options: {
+            A: "Khởi đầu hoành tráng nhưng kết thúc lại tồi tàn, không ra gì.",
+            B: "Động vật lai tạp.",
+            C: "Sức mạnh to lớn của thiên nhiên.",
+            D: "Sự thông minh, tài trí xuất chúng."
+        },
+        correctAnswer: "A",
+        explanation: "Thành ngữ 'Đầu voi đuôi chuột' chỉ sự việc ban đầu làm lớn lao, phô trương nhưng kết thúc lại qua loa, thất bại hoặc không đi đến đâu."
+    },
+    {
+        id: 42,
+        question: "Chọn từ đúng chính tả trong các từ sau:",
+        options: {
+            A: "Sáng lạn",
+            B: "Xán lạn",
+            C: "Sáng lạng",
+            D: "Xán lạng"
+        },
+        correctAnswer: "B",
+        explanation: "Xán lạn: 'Xán' nghĩa là rực rỡ, 'Lạn' nghĩa là sáng sủa."
+    },
+    {
+        id: 43,
+        question: "Câu \"Bàn tay ta làm nên tất cả / Có sức người sỏi đá cũng thành cơm\" sử dụng biện pháp tu từ gì nổi bật nhất?",
+        options: {
+            A: "Hoán dụ và Nói quá",
+            B: "Ẩn dụ và Điệp ngữ",
+            C: "So sánh và Nhân hóa",
+            D: "Chơi chữ và Phóng đại"
+        },
+        correctAnswer: "A",
+        explanation: "Hoán dụ: 'Bàn tay ta' chỉ con người lao động; Nói quá: 'Sỏi đá cũng thành cơm' nhấn mạnh sức mạnh cải tạo thiên nhiên của con người."
+    },
+    {
+        id: 44,
+        question: "Đọc đoạn văn: \"Gió bắt đầu thổi mạnh. Những đám mây đen vần vũ trên bầu trời. Cây cối nghiêng ngả theo chiều gió. Cơn bão số 3 sắp đổ bộ.\" Đoạn văn trên sử dụng phương thức biểu đạt chính nào?",
+        options: {
+            A: "Tự sự",
+            B: "Miêu tả",
+            C: "Nghị luận",
+            D: "Biểu cảm"
+        },
+        correctAnswer: "B",
+        explanation: "Đoạn văn tái hiện lại quang cảnh, trạng thái của sự vật trước cơn bão (miêu tả)."
+    },
+    {
+        id: 45,
+        question: "Trong câu \"Chị Dậu là một người phụ nữ nông dân giàu tình yêu thương, có sức sống tiềm tàng mạnh mẽ\", từ \"tiềm tàng\" có nghĩa là gì?",
+        options: {
+            A: "Ẩn giấu bên trong, chưa bộc lộ rõ ràng nhưng rất sâu sắc và bền bỉ.",
+            B: "Thể hiện một cách phô trương ra bên ngoài.",
+            C: "Yếu đuối, mỏng manh.",
+            D: "Phức tạp, khó đoán."
+        },
+        correctAnswer: "A",
+        explanation: "Tiềm tàng chỉ những yếu tố, năng lực tồn tại ẩn giấu bên trong, chưa lộ ra ngoài nhưng có sức mạnh lớn."
+    },
+    {
+        id: 46,
+        question: "Đọc câu ca dao: \"Thân em như chổi đầu đình / Phất phơ hồ bán mặc tình gió mưa.\" Mô típ \"Thân em...\" thường được dùng trong ca dao để chỉ điều gì?",
+        options: {
+            A: "Vẻ đẹp kiêu sa của người phụ nữ.",
+            B: "Thân phận phụ thuộc, bấp bênh, trôi nổi của người phụ nữ trong xã hội cũ.",
+            C: "Sự mạnh mẽ, độc lập của người phụ nữ.",
+            D: "Lòng chung thủy của người vợ chờ chồng."
+        },
+        correctAnswer: "B",
+        explanation: "Mô típ này thường đi liền với các hình ảnh bèo dạt, mạn thuyền... để than thân trách phận của phụ nữ trong xã hội phong kiến."
+    },
+    {
+        id: 47,
+        question: "Tác phẩm nào dưới đây KHÔNG thuộc dòng văn học hiện thực phê phán giai đoạn 1930 - 1945?",
+        options: {
+            A: "Bước đường cùng",
+            B: "Tắt đèn",
+            C: "Chữ người tử tù",
+            D: "Chí Phèo"
+        },
+        correctAnswer: "C",
+        explanation: "'Chữ người tử tù' (Nguyễn Tuân) thuộc dòng văn học Lãng mạn."
+    },
+    {
+        id: 48,
+        question: "Chọn từ đồng nghĩa với từ \"thanh tao\":",
+        options: {
+            A: "Trang nhã",
+            B: "Cục mịch",
+            C: "Thô kệch",
+            D: "Rườm rà"
+        },
+        correctAnswer: "A",
+        explanation: "Thanh tao có nghĩa là trong sạch, nhã nhặn, đồng nghĩa với trang nhã."
+    },
+    {
+        id: 49,
+        question: "Xác định lỗi diễn đạt trong câu: \"Đây là một trong những bộ phim hay nhất mà tôi đã từng xem nó.\"",
+        options: {
+            A: "Dùng từ không đúng nghĩa.",
+            B: "Thiếu chủ ngữ.",
+            C: "Thừa từ, lặp từ (thừa đại từ 'nó').",
+            D: "Sai trật tự từ."
+        },
+        correctAnswer: "C",
+        explanation: "Thừa đại từ 'nó' ở cuối câu, vì đại từ quan hệ 'mà' đã thay thế cho cụm 'bộ phim' ở trước đó."
+    },
+    {
+        id: 50,
+        question: "Câu nói \"Ngọc không mài không thành khí, người không học không biết lý\" khuyên chúng ta điều gì?",
+        options: {
+            A: "Đề cao tầm quan trọng của việc học tập, rèn luyện để thành tài, hiểu đạo lý.",
+            B: "Khuyên con người nên làm nghề thợ bạc.",
+            C: "Chỉ những người có tài năng thiên bẩm mới thành công.",
+            D: "Phê phán sự lười biếng trong lao động tay chân."
+        },
+        correctAnswer: "A",
+        explanation: "Câu nói mượn hình ảnh mài ngọc để ẩn dụ cho việc con người phải trải qua học tập, rèn luyện vất vả mới trở nên hữu ích, hiểu biết đạo lý."
+    }
+];
+
+       
