@@ -454,4 +454,188 @@ export const examData = [
             D: "Chi phí mua phần mềm đắt đỏ."
         },
         correctAnswer: "C",
-        explanation: "Văn bản chỉ ra: 'sự hiện diện của AI cũng đặt ra một th
+        explanation: "Văn bản nêu rõ: 'Trước đây, giáo viên đóng vai trò là nguồn cung cấp kiến thức độc quyền'."
+    },
+    {
+        id: 37,
+        passage: "Trước đây, giáo viên đóng vai trò là nguồn cung cấp kiến thức độc quyền...",
+        question: "AI đặt ra thách thức lớn nhất cho ngành giáo dục ở khía cạnh nào?",
+        options: {
+            A: "Giảm sút lương của giáo viên.",
+            B: "Làm học sinh lười đi học.",
+            C: "Phương pháp đánh giá năng lực qua thi cử.",
+            D: "Chi phí mua phần mềm đắt đỏ."
+        },
+        correctAnswer: "C",
+        explanation: "Văn bản chỉ ra: 'sự hiện diện của AI cũng đặt ra một thách thức lớn về phương pháp đánh giá năng lực.'"
+    },
+    {
+        id: 38,
+        passage: "Trước đây, giáo viên đóng vai trò là nguồn cung cấp kiến thức độc quyền...",
+        question: "Cách lập luận chính của tác giả trong đoạn trích là gì?",
+        options: {
+            A: "Nêu luận điểm, phân tích nguyên nhân, so sánh trước - nay và đưa ra hướng giải quyết.",
+            B: "Kể một câu chuyện cổ tích và rút ra bài học.",
+            C: "Phản bác hoàn toàn sự phát triển của công nghệ.",
+            D: "Liệt kê số liệu thống kê để chứng minh."
+        },
+        correctAnswer: "A",
+        explanation: "Tác giả đưa ra luận điểm về sự thay đổi của giáo dục, sau đó phân tích nguyên nhân và chứng minh bằng cách so sánh trước và nay, đưa ra hướng giải quyết."
+    },
+    {
+        id: 39,
+        passage: "Trước đây, giáo viên đóng vai trò là nguồn cung cấp kiến thức độc quyền...",
+        question: "Theo tác giả, giáo dục thời đại AI cần dịch chuyển trọng tâm sang yếu tố nào?",
+        options: {
+            A: "Dạy học sinh cách lập trình AI.",
+            B: "Ghi nhớ kiến thức nhanh hơn.",
+            C: "Tư duy phản biện, khả năng sáng tạo và trí tuệ cảm xúc.",
+            D: "Thiết kế các bài luận dài hơn."
+        },
+        correctAnswer: "C",
+        explanation: "Văn bản nhấn mạnh trọng tâm cần dịch chuyển sang 'tư duy phản biện, khả năng sáng tạo và trí tuệ cảm xúc (EQ)'."
+    },
+    {
+        id: 40,
+        passage: "Trước đây, giáo viên đóng vai trò là nguồn cung cấp kiến thức độc quyền...",
+        question: "Khái niệm 'cái tâm' trong câu cuối mang ý nghĩa gì?",
+        options: {
+            A: "Trí thông minh siêu việt.",
+            B: "Cảm xúc, tình yêu thương, đạo đức và sự tận tụy.",
+            C: "Khả năng tính toán chính xác.",
+            D: "Bằng cấp của người thầy."
+        },
+        correctAnswer: "B",
+        explanation: "'Cái tâm' đối lập với khả năng tính toán của máy móc, nó đại diện cho cảm xúc, tình yêu thương, đạo đức và sự tận tụy của con người."
+    },
+    {
+        id: 41,
+        passage: "Lâm ôm khư khư con chó nhỏ gầy xơ xác vừa nhặt ở bãi rác về. Bố trừng mắt: 'Nhà đã nghèo, mày còn rước của nợ này về làm gì? Bỏ ngay!'. Lâm rơm rớm nước mắt: 'Nó cũng là một sinh mệnh mà bố. Con nhịn ăn sáng nhường nó cũng được!'. Bố đứng lặng người. Hồi lâu, ông khẽ thở dài, quẳng miếng giò lợn đang ăn dở xuống mâm: 'Đấy, cho nó ăn đi kẻo chết, bố ạ!'.",
+        question: "Thể loại của đoạn trích trên là gì?",
+        options: {
+            A: "Truyện ngắn",
+            B: "Kịch",
+            C: "Tùy bút",
+            D: "Phóng sự"
+        },
+        correctAnswer: "A",
+        explanation: "Đoạn văn có cốt truyện, nhân vật, bối cảnh, mâu thuẫn ngắn gọn đặc trưng của Truyện ngắn."
+    },
+    {
+        id: 42,
+        passage: "Lâm ôm khư khư con chó nhỏ gầy xơ xác...",
+        question: "Hành động của Lâm cho thấy cậu bé là người như thế nào?",
+        options: {
+            A: "Bướng bỉnh, hay cãi lời bố.",
+            B: "Bao dung, giàu tình yêu thương động vật.",
+            C: "Thích thể hiện bản thân.",
+            D: "Phung phí tiền bạc."
+        },
+        correctAnswer: "B",
+        explanation: "Lâm sẵn sàng nhịn đói để cứu con chó vì coi nó là một 'sinh mệnh', cho thấy sự bao dung và tình yêu thương động vật."
+    },
+    {
+        id: 43,
+        passage: "Lâm ôm khư khư con chó nhỏ gầy xơ xác...",
+        question: "Câu nói cuối cùng của người bố thể hiện sự chuyển biến tâm lý nào?",
+        options: {
+            A: "Tức giận đến mức mất kiểm soát.",
+            B: "Mủi lòng, thức tỉnh tình thương trước sự nhân hậu của con.",
+            C: "Sợ hãi trước tiếng khóc của Lâm.",
+            D: "Ghét bỏ miếng giò lợn."
+        },
+        correctAnswer: "B",
+        explanation: "Câu nói bâng quơ nhưng thực chất cho thấy ông bố đã mủi lòng, thức tỉnh tình thương trước sự nhân hậu của cậu con trai."
+    },
+    {
+        id: 44,
+        passage: "Lâm ôm khư khư con chó nhỏ gầy xơ xác...",
+        question: "Trong câu 'Đấy, cho nó ăn đi kẻo chết, bố ạ!', từ 'bố ạ' đóng vai trò gì?",
+        options: {
+            A: "Thành phần gọi đáp",
+            B: "Thành phần phụ chú",
+            C: "Chủ ngữ",
+            D: "Vị ngữ"
+        },
+        correctAnswer: "A",
+        explanation: "'bố ạ!' là thành phần gọi đáp, dùng để duy trì quan hệ giao tiếp."
+    },
+    {
+        id: 45,
+        passage: "Lâm ôm khư khư con chó nhỏ gầy xơ xác...",
+        question: "Đoạn trích sử dụng phương thức biểu đạt chính nào?",
+        options: {
+            A: "Thuyết minh",
+            B: "Nghị luận",
+            C: "Tự sự",
+            D: "Miêu tả"
+        },
+        correctAnswer: "C",
+        explanation: "Đoạn trích kể lại một chuỗi sự việc có mở đầu, diễn biến và kết thúc (tìm thấy chó -> bố mắng -> con đối đáp -> bố nhượng bộ)."
+    },
+    {
+        id: 46,
+        passage: "Nhiều người cho rằng văn hóa đọc đang chết dần. Nhưng nhận định này có phần phiến diện. Người trẻ không ngừng đọc, nhưng họ đang đọc theo một cách khác: qua màn hình, qua những dòng trạng thái ngắn, những bài viết cô đọng. Tuy nhiên, mặt trái của kiểu 'đọc nhanh, đọc lướt' này là sự phân mảnh của tư duy. Con người thu nạp quá nhiều thông tin vụn vặt và mất dần khả năng tập trung sâu vào một cuốn sách dày. Bài toán đặt ra không phải là cấm đoán công nghệ, mà là hướng dẫn họ cách 'đọc chậm lại' giữa biển thông tin, để biết chắt lọc tinh hoa.",
+        question: "Tác giả đánh giá như thế nào về nhận định 'văn hóa đọc đang chết dần'?",
+        options: {
+            A: "Hoàn toàn đồng tình.",
+            B: "Đó là một nhận định có phần phiến diện.",
+            C: "Rất phẫn nộ và kịch liệt phản đối.",
+            D: "Cho rằng điều đó chỉ đúng với người già."
+        },
+        correctAnswer: "B",
+        explanation: "Tác giả nhận định: 'nhận định này có phần phiến diện. Người trẻ không ngừng đọc, nhưng họ đang đọc theo một cách khác.'"
+    },
+    {
+        id: 47,
+        passage: "Nhiều người cho rằng văn hóa đọc đang chết dần...",
+        question: "Hậu quả của việc 'đọc nhanh, đọc lướt' được nhắc đến là gì?",
+        options: {
+            A: "Làm hỏng thị lực.",
+            B: "Tốn kém thời gian.",
+            C: "Sự phân mảnh tư duy, mất dần khả năng tập trung sâu.",
+            D: "Tăng nguy cơ bị lừa đảo trên mạng."
+        },
+        correctAnswer: "C",
+        explanation: "Văn bản nêu: 'mặt trái của kiểu đọc nhanh, đọc lướt này là sự phân mảnh của tư duy... mất dần khả năng tập trung sâu'."
+    },
+    {
+        id: 48,
+        passage: "Nhiều người cho rằng văn hóa đọc đang chết dần...",
+        question: "Giải pháp tác giả đưa ra để giải quyết vấn đề văn hóa đọc là gì?",
+        options: {
+            A: "Xóa bỏ mạng xã hội.",
+            B: "Bắt buộc học sinh đọc 1 cuốn sách mỗi tuần.",
+            C: "Chuyển toàn bộ sách giấy thành sách điện tử.",
+            D: "Hướng dẫn cách 'đọc chậm lại' để chắt lọc tinh hoa."
+        },
+        correctAnswer: "D",
+        explanation: "Bài toán đặt ra là 'hướng dẫn họ cách đọc chậm lại ... để biết chắt lọc tinh hoa'."
+    },
+    {
+        id: 49,
+        passage: "Nhiều người cho rằng văn hóa đọc đang chết dần...",
+        question: "Cụm từ 'biển thông tin' sử dụng biện pháp nghệ thuật gì?",
+        options: {
+            A: "Ẩn dụ",
+            B: "Nhân hóa",
+            C: "Chơi chữ",
+            D: "Nói giảm nói tránh"
+        },
+        correctAnswer: "A",
+        explanation: "'Biển thông tin' ngầm so sánh lượng thông tin khổng lồ trên Internet hiện nay rộng lớn và phức tạp như một vùng biển."
+    },
+    {
+        id: 50,
+        passage: "Nhiều người cho rằng văn hóa đọc đang chết dần...",
+        question: "Đoạn văn trên mang đặc trưng của phong cách ngôn ngữ nào?",
+        options: {
+            A: "Sinh hoạt",
+            B: "Báo chí - Chính luận",
+            C: "Hành chính - Công vụ",
+            D: "Nghệ thuật"
+        },
+        correctAnswer: "B",
+        explanation: "Đoạn văn bàn luận về một hiện tượng xã hội (văn hóa đọc), có hệ thống luận điểm rõ ràng, sử dụng ngôn ngữ chuẩn mực, khách quan, mang đậm phong cách báo chí - chính luận."
+    }
+];
