@@ -97,4 +97,8 @@ export const listTaiLieu = [
 export const listDeThi = [
     { id: 'de1', title: 'Đề thực chiến số 1', time: 60, questions: 50 },
     // Thêm đề thi sau này ở đây
+    { id: 'de2', title: 'Đề thực chiến số 1', time: 60, questions: 50 },
+    // Thêm đề thi sau này ở đây
+    { id: 'de3', title: 'Đề thực chiến số 1', time: 60, questions: 50 },
+    // Thêm đề thi sau này ở đây
 ];
