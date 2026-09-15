@@ -23,10 +23,19 @@ function hideLoader() {
     if (globalLoader) globalLoader.classList.add('hidden');
 }
 
+// Cờ này đánh dấu: user vừa bấm nút Đăng nhập ở CHÍNH trang này (khác với
+// trường hợp mở lại login.html trong khi phiên cũ vẫn còn hiệu lực).
+// Mục đích: để onAuthStateChanged phía dưới KHÔNG tự chuyển trang giùm khi
+// đang trong luồng đăng nhập tươi, tránh chuyển trang trước khi sessionId
+// mới kịp ghi xong lên Firestore (đây chính là nguyên nhân gây bug tự đăng
+// xuất ngay sau khi đăng nhập ở bản trước).
+let freshLoginInProgress = false;
+
 // 1. Xử lý logic khi bấm nút Đăng nhập (chỉ tồn tại trên login.html)
 if (loginForm) {
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        freshLoginInProgress = true;
 
         loginBtn.disabled = true;
         loginSpinner.classList.remove('hidden');
@@ -42,8 +51,11 @@ if (loginForm) {
                 sessionId: newSessionId,
                 updatedAt: serverTimestamp()
             });
-            // onAuthStateChanged bên dưới sẽ tự động điều hướng về trang chủ
+            // CHỈ chuyển trang SAU KHI đã ghi Firestore xong hẳn, để trang
+            // index.html khi tải lên sẽ luôn đọc được sessionId mới nhất.
+            goTo('index.html');
         } catch (error) {
+            freshLoginInProgress = false;
             errorMessage.textContent = "Sai email hoặc mật khẩu. Vui lòng thử lại!";
             errorMessage.classList.remove('hidden');
             loginBtn.disabled = false;
@@ -88,25 +100,11 @@ let sessionUnsubscribe = null;
 function watchSession(uid) {
     if (sessionUnsubscribe) sessionUnsubscribe(); // gỡ listener cũ nếu có
 
-    // Nếu thiết bị này chưa từng có sessionId cục bộ (ví dụ: phiên được Firebase
-    // tự khôi phục từ trước khi có tính năng này), coi lần đầu thấy dữ liệu
-    // trên Firestore là "chính chủ" và ghi nhận lại, để tránh tự đăng xuất oan.
-    let localSessionId = localStorage.getItem('sessionId');
-    let isFirstSnapshot = true;
-
     sessionUnsubscribe = onSnapshot(doc(db, 'sessions', uid), (snap) => {
         const remote = snap.data();
-        if (!remote) return; // chưa có document (trường hợp hiếm), bỏ qua
+        if (!remote) return; // chưa có document (user chưa từng đăng nhập lần nào với tính năng này), bỏ qua
 
-        if (isFirstSnapshot) {
-            isFirstSnapshot = false;
-            if (!localSessionId) {
-                localSessionId = remote.sessionId;
-                localStorage.setItem('sessionId', localSessionId);
-                return;
-            }
-        }
-
+        const localSessionId = localStorage.getItem('sessionId');
         if (remote.sessionId !== localSessionId) {
             // Có thiết bị/máy khác vừa đăng nhập -> tự đăng xuất ở đây
             if (sessionUnsubscribe) sessionUnsubscribe();
@@ -122,8 +120,14 @@ function watchSession(uid) {
 onAuthStateChanged(auth, (user) => {
     if (user) {
         if (currentFileName === 'login.html') {
-            goTo('index.html');
-            return; // đang điều hướng đi, không cần gỡ loader ở trang này
+            // Chỉ tự chuyển trang ở đây khi user mở lại login.html trong lúc
+            // phiên cũ vẫn còn hiệu lực (Firebase khôi phục session persisted).
+            // Nếu đang trong luồng vừa bấm nút Đăng nhập (freshLoginInProgress),
+            // để submit handler tự chuyển trang SAU KHI ghi Firestore xong.
+            if (!freshLoginInProgress) {
+                goTo('index.html');
+            }
+            return;
         }
         setNavToLoggedIn();
         watchSession(user.uid);
